@@ -1,3 +1,5 @@
+import random
+
 print("Hello, world!")
 
 yield "This should not be here."
