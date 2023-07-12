@@ -10,4 +10,3 @@ print("Result:", result)
 
 return "This should not be here either."
 
-#adding comment
