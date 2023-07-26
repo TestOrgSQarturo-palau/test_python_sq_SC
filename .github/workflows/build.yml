@@ -2,20 +2,24 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
+    branches: 
+      - '*'
   pull_request:
-    types: [opened, synchronize, reopened]
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  pull-requests: read # allows SonarQube to decorate PRs with analysis results
 
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - uses: sonarsource/sonarqube-scan-action@master
+      - uses: sonarsource/sonarqube-scan-action
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
