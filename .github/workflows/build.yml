@@ -24,7 +24,7 @@ jobs:
        #     sonar.projectKey: TestOrgSQarturo-palau_test_python_sq_3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_SC }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # We do not recommend to use this in a pull request. Prefer using pull request
