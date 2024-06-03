@@ -1,11 +1,10 @@
-name: Build
-
-
+name: Build SonarCloud
 on:
   push:
-    branches: [ "main", "new_bug" ]
+    branches:
+      - '*'
   pull_request:
-    branches: [ "main" ]
+    types: [opened, synchronize, reopened]
   workflow_dispatch:
 
 permissions:
